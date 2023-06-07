@@ -1,11 +1,10 @@
-const menuIcon =document.querySelector(".content");
-const nav = document.querySelector(".nav");
-
+window.addEventListener('load', function() {
+const menuIcon =document.querySelector(".content");    
 let bandera = 1
 menuIcon.addEventListener("click",menuop)
 function menuop() {
+    const nav = document.querySelector(".nav").classList.toggle("activar");
 if (bandera == 1){
-    console.log("funciona")
     const bar1 = document.querySelector("#bar1").classList.toggle("active");
     document.querySelector("#bar1").classList.remove("default");
     const bar2 = document.querySelector("#bar2").classList.toggle("active");
@@ -13,20 +12,14 @@ if (bandera == 1){
     const bar3 = document.querySelector("#bar3").classList.toggle("active");
     document.querySelector("#bar3").classList.remove("default");
     document.querySelector("#nav");
-    nav.classList.toggle("mostrar");
-    nav.classList.remove("ocultar");
     bandera = 2
 } else {
-    console.log("tukituki")
     document.querySelector("#bar1").classList.toggle("active");
     document.querySelector("#bar1").classList.toggle("default");
     document.querySelector("#bar2").classList.toggle("active");
     document.querySelector("#bar2").classList.toggle("default");
     document.querySelector("#bar3").classList.toggle("active");
     document.querySelector("#bar3").classList.toggle("default");
-    nav.classList.remove("mostrar");
-    nav.classList.toggle("ocultar");
     bandera = 1
-}
-    nav.classList.toggle("inactive")
-}
+}}});
+

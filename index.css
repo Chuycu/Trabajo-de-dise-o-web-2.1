@@ -13,19 +13,19 @@ header{
     box-shadow: 0px 19px 31px -21px rgba(0,0,0,0.75);
     position:fixed ;
     background-color: white;
-    z-index: 100;
+    z-index: 120;
 }
 
 .content {
     position: relative;
     width: 80px;
     display: flex;
-    padding: 5px;
+    padding-left: 7px;
     gap: 10px;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 100;
+    z-index:60 ;
   }
 
   .content .bar {
@@ -142,7 +142,7 @@ header #redes{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 220px;
+    width: 200px;
     height: 100%;
 }
 header #redes img{
@@ -152,54 +152,82 @@ header #redes img{
 
 .nav{
     display: flex;
-    justify-content: center;
-    height: 100vh;
-    width: 10%;
-    padding: 25px;
+    flex-direction: column;
+    flex-wrap: wrap;
     position: fixed;
     top: 0;
     left: 0;
+    width: 0px;
+    height: 100vh;
+    border-top-right-radius: 2%;
+    border-bottom-right-radius: 2%;
+    overflow: hidden;
     padding-top: 70px;
-    background-color: aqua;
+    transition: width 0.2s ease;
     background-image: url(img_index/aside.jpg);
     background-size: cover;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    z-index: 50;
+    opacity: 0.9;
+    z-index: 30;
+}
+.activar{
+    width: 15%;
+    transition: width 0.2s ease;
 }
 
 .inactive{
     display: none;
 }
-.nav ul li{
+.nav .dropdown{
     list-style: armenian;
-    margin: 2rem;
-    color: white;
-    font-weight: 500;
+    margin: 1.5rem;
+    color: brown;
+    font-weight: 600;
     font-size: 20px;
 }
+.btn{
+    background: none;
+    border: 0;
+    width: auto;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    backdrop-filter: blur(100px);
+}
 
-.mostrar{
-    display: block;
-    animation-name: sale;
-    animation-duration: 0.2s;
-    animation-direction: normal;
-    animation-timing-function: ease-in;
-}
-@keyframes sale {
-    0%{left:-10% ;}
-    100%{left: 0;}
-}
-.ocultar{
+.dropdown {
+    width: 80%;
+    height: 25px;
+    position: relative;
+  }
+  .dropdown-content {
     display: none;
-    animation-name: entra;
-    animation-duration: 0.2s;
-    animation-direction: reverse;
-}
-@keyframes entra {
-    0%{left:-15% ;}
-    100%{left: 0;}
-}
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    z-index: 200;
+  }
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    backdrop-filter: blur(100px);
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+
+  .dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+  }
+
 /* Seccion 1 */
 
 main{
@@ -219,11 +247,12 @@ main #seccion1{
     
     background-image: url(img_index/fondo.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;   
+    box-shadow: 1px 1px 14px 6px rgba(0,0,0,0.23);
+
 }
 
 main section article{
-    box-shadow: 1px 1px 14px 6px rgba(0,0,0,0.23);
     background-color: #e5e5e5;
     opacity: 0.8;
     padding: 2%;
@@ -232,7 +261,7 @@ main section article{
     justify-content: flex-start;
     align-items: center;
     width: 60%;
-    height: 80%;    
+    height: auto;    
 }
 main section article .intro{
     width: 80%;
@@ -249,3 +278,162 @@ main section article .parrafo{
     letter-spacing: 0.1rem;
     
 }
+
+main section article img {
+    width: 20%;
+    height: auto;
+    position: static;
+    translate: 100%;
+}
+
+/* Seccion 2 */
+
+#seccion2{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(img_index/fondo2.jpg);
+    background-size: cover;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: bolder;
+    box-shadow: -14px 140px 110px 71px rgba(53,134,255,1);
+}
+
+.objetivos_logros ul li::first-letter{
+    font-size:1.2rem;
+}
+
+.objetivos_logros ul li{
+    margin: 1rem;
+}
+
+.objetivos_logros{
+    
+    margin: 2%;
+    opacity: 0.8;
+}
+
+
+/* Footer */
+
+.footer {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    height: 20vh;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+    z-index: 10;
+  }
+  .social-icon,
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon__item,
+  .menu__item {
+    list-style: none;
+  }
+  
+  .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .social-icon__link:hover {
+    transform: translateY(-10px);
+  }
+  
+  .menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  
+  .menu__link:hover {
+    opacity: 1;
+  }
+  
+  .footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+  }
+  
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+  
+  .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+  
+  .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+  }
+  
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+  
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
